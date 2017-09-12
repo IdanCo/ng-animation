@@ -1,4 +1,50 @@
-.main::after {
-  display: block;
-  content: 'SASS is working!'
+.ball {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 33% 33%, deeppink, black);
+  border-radius: 50%;
+  left: 0; right: 0;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(.45,.04,.82,.52);
+  //animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.hoverable {
+  transition: 0.3s cubic-bezier(.45,.04,.82,.52) all;
+  &:hover {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes bounce {
+  from {top: 0;}
+  to {top: calc(100% - 100px);}
+}
+//
+//@keyframes jump {
+//  0% {top: 0; animation-timing-function: ease-in;}
+//  25% {top: 40%; left:0; animation-timing-function: linear;}
+//  50% {top: calc(100% - 100px); animation-timing-function: linear;}
+//  75% {top: 40%; left: calc(100% - 100px); animation-timing-function: linear;}
+//  100% {top: 0; animation-timing-function: ease-out;}
+//}
+
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
 }

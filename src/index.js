@@ -2,6 +2,7 @@
 
 // Frameworks
 import angular from 'angular';
+import 'angular-animate'
 
 // Internal Modules
 import ComponentsModule from './components/components.module';
@@ -9,5 +10,6 @@ import ComponentsModule from './components/components.module';
 // Register app
 angular
   .module('app', [
-    ComponentsModule
+    ComponentsModule,
+    'ngAnimate'
   ]);
